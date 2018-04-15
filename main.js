@@ -1,10 +1,7 @@
 var express = require("express");
 var app = express();
 
-function Shop() {
-  this.name = 'PolyU Cafe'
-  this.phone = '12345678'
-}
+var Shop = require("./shop.js");
 
 app.get("/", function(req, res) {
   res.send("Hello, world!");
@@ -12,11 +9,12 @@ app.get("/", function(req, res) {
 
 app.get("/json", function(req, res) {
   app.set("json spaces", 4);
-  res.json(new Shop());
+  res.json(new Shop("Hesse Cafe", "88889999"));
 });
 
-var server = app.listen(8080, function() {
+// AliCloud port 3389
+var server = app.listen(3389, function() {
   var host = server.address().address;
   var port = server.address().port;
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log("Example app listening at http://%s:%s", host, port);
 })
