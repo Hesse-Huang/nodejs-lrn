@@ -3,6 +3,8 @@
   "version": "1.0.1",
   "main": "main.js",
   "dependencies": {
-    "express": "latest"
+    "express": "latest",
+    "mongodb": "latest",
+    "body-parser": "latest"
   }
 }
